@@ -353,130 +353,130 @@ int provjera_pomaka(int red1, int stup1)
     //greška
 }
 */
-void switch_case1(int red1, int red_num1, char stup1, int stup_num1)
+void switch_case1(int *red_num1, char red1, char stup1, int *stup_num1)
 {
     switch (red1)
     {
     case '1':
-        red_num1 = 2;
+        *red_num1 = 2;
         break;
 
     case '2':
-        red_num1 = 4;
+        *red_num1 = 4;
         break;
 
     case '3':
-        red_num1 = 6;
+        *red_num1 = 6;
         break;
 
     case '4':
-        red_num1 = 8;
+        *red_num1 = 8;
         break;
 
     case '5':
-        red_num1 = 10;
+        *red_num1 = 10;
         break;
 
     case '6':
-        red_num1 = 12;
+        *red_num1 = 12;
         break;
 
     case '7':
-        red_num1 = 14;
+        *red_num1 = 14;
         break;
     }
     switch (stup1)
     {
     case 'a':
-        stup_num1 = 2;
+        *stup_num1 = 2;
         break;
 
     case 'b':
-        stup_num1 = 4;
+        *stup_num1 = 4;
         break;
 
     case 'c':
-        stup_num1 = 6;
+        *stup_num1 = 6;
         break;
 
     case 'd':
-        stup_num1 = 8;
+        *stup_num1 = 8;
         break;
 
     case 'e':
-        stup_num1 = 10;
+        *stup_num1 = 10;
         break;
 
     case 'f':
-        stup_num1 = 12;
+        *stup_num1 = 12;
         break;
 
     case 'g':
-        stup_num1 = 14;
+        *stup_num1 = 14;
         break;
     }
 }
-void switch_case2(int red2, int red_num2, char stup2, int stup_num2)
+void switch_case2(int *red_num2, char red2, char stup2, int *stup_num2)
 {
     switch (red2)
     {
     case '1':
-        red_num2 = 2;
+        *red_num2 = 2;
         break;
 
     case '2':
-        red_num2 = 4;
+        *red_num2 = 4;
         break;
 
     case '3':
-        red_num2 = 6;
+        *red_num2 = 6;
         break;
 
     case '4':
-        red_num2 = 8;
+        *red_num2 = 8;
         break;
 
     case '5':
-        red_num2 = 10;
+        *red_num2 = 10;
         break;
 
     case '6':
-        red_num2 = 12;
+        *red_num2 = 12;
         break;
 
     case '7':
-        red_num2 = 14;
+        *red_num2 = 14;
         break;
     }
 
     switch (stup2)
     {
     case 'a':
-        stup_num2 = 2;
+        *stup_num2 = 2;
         break;
 
     case 'b':
-        stup_num2 = 4;
+        *stup_num2 = 4;
         break;
 
     case 'c':
-        stup_num2 = 6;
+        *stup_num2 = 6;
         break;
 
     case 'd':
-        stup_num2 = 8;
+        *stup_num2 = 8;
         break;
 
     case 'e':
-        stup_num2 = 10;
+        *stup_num2 = 10;
         break;
 
     case 'f':
-        stup_num2 = 12;
+        *stup_num2 = 12;
         break;
 
     case 'g':
-        stup_num2 = 14;
+        *stup_num2 = 14;
         break;
     }
 }
@@ -485,12 +485,11 @@ int main()
     int izbor;
     while (1)
     {
-        system("cls");
         printf("  _____ _                              _                              _     \n");
         printf(" /__   \\ |__   ___     /\\/\\   ___ _ __( )__     /\\/\\   ___  _ __ _ __(_)___ \n");
         printf("   / /\\/ '_ \\ / _ \\   /    \\ / _ \\ '_ \\/ __|   /    \\ / _ \\| '__| '__| / __|\n");
         printf("  / /  | | | |  __/  / /\\/\\ \\  __/ | | \\__ \\  / /\\/\\ \\ (_) | |  | |  | \\__ \\\n");
-        printf("  \\/   |_| |_|\\___|   \\/    \\/\\___|_| |_|___/  \\/    \\/\\___/|_|  |_|  |_|___/\n\n\n");
+        printf("  \\/   |_| |_|\\___|  \\/    \\/\\___|_| |_|___/  \\/    \\/\\___/|_|  |_|  |_|___/\n\n\n");
         printf("Unesite broj zeljenog odabira:\n");
         printf("1. Start\n");
         printf("2. Rules\n");
@@ -500,7 +499,6 @@ int main()
         {
             int countX = 9, countO = 9;
             int count1 = 9;
-            system("cls");
             char mlin_polje[16][17] = {
                 "################",
                 "# a b c d e f g#",
@@ -540,12 +538,12 @@ int main()
                 }
                 else
                 {
-                    switch_case1(red_num1, red1, stup1, stup_num1);
-                    if (red1 != 1 || red1 != 2 || red1 != 3 || red1 != 4 || red1 != 5 || red1 != 6 || red1 != 7)
+                    switch_case1(&red_num1, red1, stup1, &stup_num1);
+                    if (red1 < '1' || red1 > '7')
                     {
                         printf("Unijeli ste pogresni broj!\n");
                     }
-                    if (stup1 != 'a' || stup1 != 'b' || stup1 != 'c' || stup1 != 'd' || stup1 != 'e' || stup1 != 'f' || stup1 != 'g')
+                    if (stup1 < 'a' || stup1 > 'g')
                     {
                         printf("Unijeli ste pogresno slovo!\n");
                         goto povratak_prviigrac;
@@ -560,7 +558,6 @@ int main()
                                     mlin_polje[i][j] = 'O';
                             }
                         }
-                        system("cls");
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
@@ -579,22 +576,23 @@ int main()
                     countX--;
                     count1--;
                     printf("Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n");
-                    povratak_mlin1:
+                povratak_mlin1:
                     scanf(" %c,%c", &red1, &stup1);
                     if (provjera_tocnosti1(red1, stup1))
                         goto povratak_mlin1;
                     else
                     {
-                        switch_case1(red_num1, red1, stup1, stup_num1);
-                        if (red1 != 1 || red1 != 2 || red1 != 3 || red1 != 4 || red1 != 5 || red1 != 6 || red1 != 7)
+                        switch_case1(&red_num1, red1, stup1, &stup_num1);
+                        if (red1 < '1' || red1 > '7')
                         {
                             printf("Unijeli ste pogresni broj!\n");
                         }
-                        if (stup1 != 'a' || stup1 != 'b' || stup1 != 'c' || stup1 != 'd' || stup1 != 'e' || stup1 != 'f' || stup1 != 'g')
+                        if (stup1 < 'a' || stup1 > 'g')
                         {
                             printf("Unijeli ste pogresno slovo!\n");
                             goto povratak_mlin1;
                         }
+
                         if (mlin_polje[red_num1][stup_num1] == 'X')
                         {
                             for (int i = 2; i <= red_num1; i++)
@@ -605,7 +603,6 @@ int main()
                                         mlin_polje[i][j] = ' ';
                                 }
                             }
-                            system("cls");
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
@@ -627,12 +624,12 @@ int main()
                     goto povratak_drugiigrac;
                 else
                 {
-                    switch_case2(red_num2, red2, stup2, stup_num2);
-                    if (red2 != 1 || red2 != 2 || red2 != 3 || red2 != 4 || red2 != 5 || red2 != 6 || red2 != 7)
+                    switch_case2(&red_num2, red2, stup2, &stup_num2);
+                    if (red2 < '1' || red2 > '7')
                     {
                         printf("Unijeli ste pogresni broj!\n");
                     }
-                    if (stup2 != 'a' || stup2 != 'b' || stup2 != 'c' || stup2 != 'd' || stup2 != 'e' || stup2 != 'f' || stup2 != 'g')
+                    if (stup2 < 'a' || stup2 > 'g')
                     {
                         printf("Unijeli ste pogresno slovo!\n");
                         goto povratak_drugiigrac;
@@ -647,8 +644,6 @@ int main()
                                     mlin_polje[i][j] = 'X';
                             }
                         }
-
-                        system("cls");
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
@@ -673,12 +668,12 @@ int main()
                         goto povratak_mlin2;
                     else
                     {
-                        switch_case2(red_num2, red2, stup2, stup_num2);
-                        if (red2 != 1 || red2 != 2 || red2 != 3 || red2 != 4 || red2 != 5 || red2 != 6 || red2 != 7)
+                        switch_case2(&red_num2, red2, stup2, &stup_num2);
+                        if (red2 < '1' || red2 > '7')
                         {
                             printf("Unijeli ste pogresni broj!\n");
                         }
-                        if (stup2 != 'a' || stup2 != 'b' || stup2 != 'c' || stup2 != 'd' || stup2 != 'e' || stup2 != 'f' || stup2 != 'g')
+                        if (stup2 < 'a' || stup2 > 'g')
                         {
                             printf("Unijeli ste pogresno slovo!\n");
                             goto povratak_mlin2;
@@ -693,7 +688,6 @@ int main()
                                         mlin_polje[i][j] = ' ';
                                 }
                             }
-                            system("cls");
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
@@ -723,17 +717,16 @@ int main()
                         goto povratak1;
                     else
                     {
-                        switch_case1(red_num1, red1, stup1, stup_num1);
-                        if (red1 != 1 || red1 != 2 || red1 != 3 || red1 != 4 || red1 != 5 || red1 != 6 || red1 != 7)
+                        switch_case1(&red_num1, red1, stup1, &stup_num1);
+                        if (red1 < '1' || red1 > '7')
                         {
                             printf("Unijeli ste pogresni broj!\n");
                         }
-                        if (stup1 != 'a' || stup1 != 'b' || stup1 != 'c' || stup1 != 'd' || stup1 != 'e' || stup1 != 'f' || stup1 != 'g')
+                        if (stup1 < 'a' || stup1 > 'g')
                         {
                             printf("Unijeli ste pogresno slovo!\n");
                             goto povratak1;
                         }
-
                         for (int i = 2; i <= red_num1; i++)
                         {
                             for (int j = 2; j <= stup_num1; j++)
@@ -750,12 +743,12 @@ int main()
                         goto povratak2;
                     else
                     {
-                        switch_case1(red_num1, red1, stup1, stup_num1);
-                        if (red1 != 1 || red1 != 2 || red1 != 3 || red1 != 4 || red1 != 5 || red1 != 6 || red1 != 7)
+                        switch_case1(&red_num1, red1, stup1, &stup_num1);
+                        if (red1 < '1' || red1 > '7')
                         {
                             printf("Unijeli ste pogresni broj!\n");
                         }
-                        if (stup1 != 'a' || stup1 != 'b' || stup1 != 'c' || stup1 != 'd' || stup1 != 'e' || stup1 != 'f' || stup1 != 'g')
+                        if (stup1 < 'a' || stup1 > 'g')
                         {
                             printf("Unijeli ste pogresno slovo!\n");
                             goto povratak2;
@@ -776,7 +769,7 @@ int main()
                             printf("Mjesto koje ste odabrali nije slobodno!\nMolimo unesite samo mjesta koja nisu zauseta!\n");
                             goto povratak2;
                         }
-                        system("cls");
+
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
@@ -797,17 +790,16 @@ int main()
                         }
                         else
                         {
-                            switch_case1(red_num1, red1, stup1, stup_num1);
-                            if (red1 != 1 || red1 != 2 || red1 != 3 || red1 != 4 || red1 != 5 || red1 != 6 || red1 != 7)
+                            switch_case1(&red_num1, red1, stup1, &stup_num1);
+                            if (red1 < '1' || red1 > '7')
                             {
                                 printf("Unijeli ste pogresni broj!\n");
                             }
-                            if (stup1 != 'a' || stup1 != 'b' || stup1 != 'c' || stup1 != 'd' || stup1 != 'e' || stup1 != 'f' || stup1 != 'g')
+                            if (stup1 < 'a' || stup1 > 'g')
                             {
                                 printf("Unijeli ste pogresno slovo!\n");
                                 goto povratak3;
                             }
-
                             for (int i = 2; i <= red_num1; i++)
                             {
                                 for (int j = 2; j <= stup_num1; j++)
@@ -816,7 +808,6 @@ int main()
                                         mlin_polje[i][j] = ' ';
                                 }
                             }
-                            system("cls");
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
@@ -832,12 +823,12 @@ int main()
                         goto povratak4;
                     else
                     {
-                        switch_case2(red_num2, red2, stup2, stup_num2);
-                        if (red2 != 1 || red2 != 2 || red2 != 3 || red2 != 4 || red2 != 5 || red2 != 6 || red2 != 7)
+                        switch_case2(&red_num2, red2, stup2, &stup_num2);
+                        if (red2 < '1' || red2 > '7')
                         {
                             printf("Unijeli ste pogresni broj!\n");
                         }
-                        if (stup2 != 'a' || stup2 != 'b' || stup2 != 'c' || stup2 != 'd' || stup2 != 'e' || stup2 != 'f' || stup2 != 'g')
+                        if (stup2 < 'a' || stup2 > 'g')
                         {
                             printf("Unijeli ste pogresno slovo!\n");
                             goto povratak4;
@@ -858,12 +849,12 @@ int main()
                         goto povratak5;
                     else
                     {
-                        switch_case2(red_num2, red2, stup2, stup_num2);
-                        if (red2 != 1 || red2 != 2 || red2 != 3 || red2 != 4 || red2 != 5 || red2 != 6 || red2 != 7)
+                        switch_case2(&red_num2, red2, stup2, &stup_num2);
+                        if (red2 < '1' || red2 > '7')
                         {
                             printf("Unijeli ste pogresni broj!\n");
                         }
-                        if (stup2 != 'a' || stup2 != 'b' || stup2 != 'c' || stup2 != 'd' || stup2 != 'e' || stup2 != 'f' || stup2 != 'g')
+                        if (stup2 < 'a' || stup2 > 'g')
                         {
                             printf("Unijeli ste pogresno slovo!\n");
                             goto povratak5;
@@ -884,7 +875,6 @@ int main()
                             printf("Mjesto koje ste odabrali nije slobodno ili ste upisali pogresne koordinate!\nMolimo unesite samo mjesta koja nisu zauseta!\n");
                             goto povratak5;
                         }
-                        system("cls");
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
@@ -903,12 +893,12 @@ int main()
                             goto povratak6;
                         else
                         {
-                            switch_case2(red_num2, red2, stup2, stup_num2);
-                            if (red2 != 1 || red2 != 2 || red2 != 3 || red2 != 4 || red2 != 5 || red2 != 6 || red2 != 7)
+                            switch_case2(&red_num2, red2, stup2, &stup_num2);
+                            if (red2 < '1' || red2 > '7')
                             {
                                 printf("Unijeli ste pogresni broj!\n");
                             }
-                            if (stup2 != 'a' || stup2 != 'b' || stup2 != 'c' || stup2 != 'd' || stup2 != 'e' || stup2 != 'f' || stup2 != 'g')
+                            if (stup2 < 'a' || stup2 > 'g')
                             {
                                 printf("Unijeli ste pogresno slovo!\n");
                                 goto povratak6;
@@ -921,7 +911,6 @@ int main()
                                         mlin_polje[i][j] = ' ';
                                 }
                             }
-                            system("cls");
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
@@ -949,12 +938,12 @@ int main()
                         goto povratak7;
                     else
                     {
-                        switch_case1(red_num1, red1, stup1, stup_num1);
-                        if (red1 != 1 || red1 != 2 || red1 != 3 || red1 != 4 || red1 != 5 || red1 != 6 || red1 != 7)
+                        switch_case1(&red_num1, red1, stup1, &stup_num1);
+                        if (red1 < '1' || red1 > '7')
                         {
                             printf("Unijeli ste pogresni broj!\n");
                         }
-                        if (stup1 != 'a' || stup1 != 'b' || stup1 != 'c' || stup1 != 'd' || stup1 != 'e' || stup1 != 'f' || stup1 != 'g')
+                        if (stup1 < 'a' || stup1 > 'g')
                         {
                             printf("Unijeli ste pogresno slovo!\n");
                             goto povratak7;
@@ -975,16 +964,17 @@ int main()
                         goto povratak8;
                     else
                     {
-                        switch_case1(red_num1, red1, stup1, stup_num1);
-                        if (red1 != 1 || red1 != 2 || red1 != 3 || red1 != 4 || red1 != 5 || red1 != 6 || red1 != 7)
+                        switch_case1(&red_num1, red1, stup1, &stup_num1);
+                        if (red1 < '1' || red1 > '7')
                         {
                             printf("Unijeli ste pogresni broj!\n");
                         }
-                        if (stup1 != 'a' || stup1 != 'b' || stup1 != 'c' || stup1 != 'd' || stup1 != 'e' || stup1 != 'f' || stup1 != 'g')
+                        if (stup1 < 'a' || stup1 > 'g')
                         {
                             printf("Unijeli ste pogresno slovo!\n");
                             goto povratak8;
                         }
+
                         if (mlin_polje[red_num1][stup_num1] == ' ')
                         {
                             for (int i = 2; i <= red_num1; i++)
@@ -1001,7 +991,6 @@ int main()
                             printf("Mjesto koje ste odabrali nije slobodno ili ste upisali pogresne koordinate!\nMolimo unesite samo mjesta koja nisu zauseta!\n");
                             goto povratak8;
                         }
-                        system("cls");
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
@@ -1022,16 +1011,17 @@ int main()
                         }
                         else
                         {
-                            switch_case1(red_num1, red1, stup1, stup_num1);
-                            if (red1 != 1 || red1 != 2 || red1 != 3 || red1 != 4 || red1 != 5 || red1 != 6 || red1 != 7)
+                            switch_case1(&red_num1, red1, stup1, &stup_num1);
+                            if (red1 < '1' || red1 > '7')
                             {
                                 printf("Unijeli ste pogresni broj!\n");
                             }
-                            if (stup1 != 'a' || stup1 != 'b' || stup1 != 'c' || stup1 != 'd' || stup1 != 'e' || stup1 != 'f' || stup1 != 'g')
+                            if (stup1 < 'a' || stup1 > 'g')
                             {
                                 printf("Unijeli ste pogresno slovo!\n");
                                 goto povratak9;
                             }
+
                             for (int i = 2; i <= red_num1; i++)
                             {
                                 for (int j = 2; j <= stup_num1; j++)
@@ -1040,7 +1030,6 @@ int main()
                                         mlin_polje[i][j] = ' ';
                                 }
                             }
-                            system("cls");
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
@@ -1056,12 +1045,12 @@ int main()
                         goto povratak10;
                     else
                     {
-                        switch_case2(red_num2, red2, stup2, stup_num2);
-                        if (red2 != 1 || red2 != 2 || red2 != 3 || red2 != 4 || red2 != 5 || red2 != 6 || red2 != 7)
+                        switch_case2(&red_num2, red2, stup2, &stup_num2);
+                        if (red2 < '1' || red2 > '7')
                         {
                             printf("Unijeli ste pogresni broj!\n");
                         }
-                        if (stup2 != 'a' || stup2 != 'b' || stup2 != 'c' || stup2 != 'd' || stup2 != 'e' || stup2 != 'f' || stup2 != 'g')
+                        if (stup2 < 'a' || stup2 > 'g')
                         {
                             printf("Unijeli ste pogresno slovo!\n");
                             goto povratak10;
@@ -1082,12 +1071,12 @@ int main()
                         goto povratak11;
                     else
                     {
-                        switch_case2(red_num2, red2, stup2, stup_num2);
-                        if (red2 != 1 || red2 != 2 || red2 != 3 || red2 != 4 || red2 != 5 || red2 != 6 || red2 != 7)
+                        switch_case2(&red_num2, red2, stup2, &stup_num2);
+                        if (red2 < '1' || red2 > '7')
                         {
                             printf("Unijeli ste pogresni broj!\n");
                         }
-                        if (stup2 != 'a' || stup2 != 'b' || stup2 != 'c' || stup2 != 'd' || stup2 != 'e' || stup2 != 'f' || stup2 != 'g')
+                        if (stup2 < 'a' || stup2 > 'g')
                         {
                             printf("Unijeli ste pogresno slovo!\n");
                             goto povratak11;
@@ -1108,7 +1097,6 @@ int main()
                             printf("Mjesto koje ste odabrali nije slobodno ili ste upisali pogresne koordinate!\nMolimo unesite samo mjesta koja nisu zauseta!\n");
                             goto povratak11;
                         }
-                        system("cls");
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
@@ -1127,12 +1115,12 @@ int main()
                             goto povratak12;
                         else
                         {
-                            switch_case2(red_num2, red2, stup2, stup_num2);
-                            if (red2 != 1 || red2 != 2 || red2 != 3 || red2 != 4 || red2 != 5 || red2 != 6 || red2 != 7)
+                            switch_case2(&red_num2, red2, stup2, &stup_num2);
+                            if (red2 < '1' || red2 > '7')
                             {
                                 printf("Unijeli ste pogresni broj!\n");
                             }
-                            if (stup2 != 'a' || stup2 != 'b' || stup2 != 'c' || stup2 != 'd' || stup2 != 'e' || stup2 != 'f' || stup2 != 'g')
+                            if (stup2 < 'a' || stup2 > 'g')
                             {
                                 printf("Unijeli ste pogresno slovo!\n");
                                 goto povratak12;
@@ -1145,7 +1133,6 @@ int main()
                                         mlin_polje[i][j] = ' ';
                                 }
                             }
-                            system("cls");
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
@@ -1159,7 +1146,6 @@ int main()
         }
         else if (izbor == 2)
         {
-            system("cls");
             printf("1.\n");
             printf("Na samom početku igre, igrača ploča je prazna.\n");
             printf("Prvo crni, a zatim naizmjenično, igrači postavljaju po jednu figuricu na slobodnu, presječnu točku.\n");
@@ -1181,7 +1167,6 @@ int main()
         }
         else if (izbor == 3)
         {
-            system("cls");
             printf("Gasenje programa...\n");
             break;
         }
