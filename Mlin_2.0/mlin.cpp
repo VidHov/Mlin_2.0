@@ -1,5 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
+#include <fstream>
+#include <cstring>
+
+using namespace std;
 
 int provjera_mlina1(char mlin_polje[16][17], int red_num1, int stup_num1)
 {
@@ -59,133 +62,133 @@ int provjera_tocnosti1(int red1, int stup1)
 {
     if (red1 == '1' && stup1 == 'b')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red1 == '1' && stup1 == 'c')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red1 == '1' && stup1 == 'e')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red1 == '1' && stup1 == 'f')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
 
     if (red1 == '2' && stup1 == 'a')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red1 == '2' && stup1 == 'c')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red1 == '2' && stup1 == 'e')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red1 == '2' && stup1 == 'g')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
 
     if (red1 == '3' && stup1 == 'a')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red1 == '3' && stup1 == 'b')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red1 == '3' && stup1 == 'f')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red1 == '3' && stup1 == 'g')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
 
     if (red1 == '4' && stup1 == 'd')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
 
     if (red1 == '5' && stup1 == 'a')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red1 == '5' && stup1 == 'b')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red1 == '5' && stup1 == 'f')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red1 == '5' && stup1 == 'g')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
 
     if (red1 == '6' && stup1 == 'a')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red1 == '6' && stup1 == 'c')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red1 == '6' && stup1 == 'e')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red1 == '6' && stup1 == 'g')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
 
     if (red1 == '7' && stup1 == 'b')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red1 == '7' && stup1 == 'c')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red1 == '7' && stup1 == 'e')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red1 == '7' && stup1 == 'f')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     return 0;
@@ -195,134 +198,134 @@ int provjera_tocnosti2(int red2, int stup2)
 {
     if (red2 == '1' && stup2 == 'b')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red2 == '1' && stup2 == 'c')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
         ;
     }
     if (red2 == '1' && stup2 == 'e')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red2 == '1' && stup2 == 'f')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
 
     if (red2 == '2' && stup2 == 'a')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red2 == '2' && stup2 == 'c')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red2 == '2' && stup2 == 'e')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red2 == '2' && stup2 == 'g')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
 
     if (red2 == '3' && stup2 == 'a')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red2 == '3' && stup2 == 'b')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red2 == '3' && stup2 == 'f')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red2 == '3' && stup2 == 'g')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
 
     if (red2 == '4' && stup2 == 'd')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
 
     if (red2 == '5' && stup2 == 'a')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red2 == '5' && stup2 == 'b')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red2 == '5' && stup2 == 'f')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red2 == '5' && stup2 == 'g')
     {
-        printf("Pogresne koordinate!");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
 
     if (red2 == '6' && stup2 == 'a')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red2 == '6' && stup2 == 'c')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red2 == '6' && stup2 == 'e')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red2 == '6' && stup2 == 'g')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
 
     if (red2 == '7' && stup2 == 'b')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red2 == '7' && stup2 == 'c')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red2 == '7' && stup2 == 'e')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     if (red2 == '7' && stup2 == 'f')
     {
-        printf("Pogresne koordinate!\n");
+        cout << "Pogresne koordinate" << endl;
         return 1;
     }
     return 0;
@@ -480,21 +483,85 @@ void switch_case2(int *red_num2, char red2, char stup2, int *stup_num2)
         break;
     }
 }
+
+struct User
+{
+    char username[50];
+    char password[50];
+};
+
+void signUp()
+{
+    User newUser;
+
+    cout << "Unesite korisnicko ime: ";
+    cin >> newUser.username;
+    cout << "Unesite lozinku: ";
+    cin >> newUser.password;
+
+    ofstream outFile("Korisnici.dat", ios::binary | ios::app);
+    if (!outFile)
+    {
+        cerr << "File could not be opened!" << endl;
+        return;
+    }
+
+    outFile.write(reinterpret_cast<char *>(&newUser), sizeof(User));
+    outFile.close();
+
+    cout << "User registered successfully!" << endl;
+}
+
+bool login()
+{
+    User existingUser;
+    char username[50];
+    char password[50];
+
+    cout << "Unesite korisnicko ime: ";
+    cin >> username;
+    cout << "Unesite lozinku: ";
+    cin >> password;
+
+    ifstream inFile("Korisnici.dat", ios::binary);
+    if (!inFile)
+    {
+        cerr << "File could not be opened!" << endl;
+        return false;
+    }
+
+    while (inFile.read(reinterpret_cast<char *>(&existingUser), sizeof(User)))
+    {
+        if (strcmp(existingUser.username, username) == 0 && strcmp(existingUser.password, password) == 0)
+        {
+            cout << "Login successful!" << endl;
+            inFile.close();
+            return true;
+        }
+    }
+
+    inFile.close();
+    cout << "Invalid username or password!" << endl;
+    return false;
+}
+
 int main()
 {
     int izbor;
     while (1)
     {
-        printf("  _____ _                              _                              _     \n");
-        printf(" /__   \\ |__   ___     /\\/\\   ___ _ __( )__     /\\/\\   ___  _ __ _ __(_)___ \n");
-        printf("   / /\\/ '_ \\ / _ \\   /    \\ / _ \\ '_ \\/ __|   /    \\ / _ \\| '__| '__| / __|\n");
-        printf("  / /  | | | |  __/  / /\\/\\ \\  __/ | | \\__ \\  / /\\/\\ \\ (_) | |  | |  | \\__ \\\n");
-        printf("  \\/   |_| |_|\\___|  \\/    \\/\\___|_| |_|___/  \\/    \\/\\___/|_|  |_|  |_|___/\n\n\n");
-        printf("Unesite broj zeljenog odabira:\n");
-        printf("1. Start\n");
-        printf("2. Rules\n");
-        printf("3. Exit\n");
-        scanf("%d", &izbor);
+        cout << "  _____ _                              _                              _     \n";
+        cout << " /__   \\ |__   ___     /\\/\\   ___ _ __( )__     /\\/\\   ___  _ __ _ __(_)___ \n";
+        cout << "   / /\\/ '_ \\ / _ \\   /    \\ / _ \\ '_ \\/ __|   /    \\ / _ \\| '__| '__| / __|\n";
+        cout << "  / /  | | | |  __/  / /\\/\\ \\  __/ | | \\__ \\  / /\\/\\ \\ (_) | |  | |  | \\__ \\\n";
+        cout << "  \\/   |_| |_|\\___|  \\/    \\/\\___|_| |_|___/  \\/    \\/\\___/|_|  |_|  |_|___/\n\n\n";
+        cout << "Unesite broj zeljenog odabira:\n";
+        cout << "1. Start\n";
+        cout << "2. Rules\n";
+        cout << "3. Exit\n";
+        cout << "4. Log in\n";
+        cout << "5. Sign up\n";
+        cin >> izbor;
         if (izbor == 1)
         {
             int countX = 9, countO = 9;
@@ -520,18 +587,18 @@ int main()
             for (int i = 0; i < 16; i++)
             {
                 for (int j = 0; j < 16; j++)
-                    printf(" %c", mlin_polje[i][j]);
-                printf("\n");
+                    cout << " " <<mlin_polje[i][j];
+                cout << "\n";
             }
-            printf("\n");
+            cout << "\n";
             char red1, stup1, red2, stup2;
             int red_num1, stup_num1, red_num2, stup_num2, count = 1;
             printf("Prvo unesite koordinate redaka pa onda stupaca!(N,x)\n");
             while (count <= 9)
             {
             povratak_prviigrac:
-                printf("1. igrac:\n");
-                scanf(" %c,%c", &red1, &stup1);
+                cout << "1. igrac:\n";
+                cin >> red1 >> stup1;
                 if (provjera_tocnosti1(red1, stup1))
                 {
                     goto povratak_prviigrac;
@@ -541,11 +608,11 @@ int main()
                     switch_case1(&red_num1, red1, stup1, &stup_num1);
                     if (red1 < '1' || red1 > '7')
                     {
-                        printf("Unijeli ste pogresni broj!\n");
+                        cout << "Unijeli ste pogresni broj!\n";
                     }
                     if (stup1 < 'a' || stup1 > 'g')
                     {
-                        printf("Unijeli ste pogresno slovo!\n");
+                        cout << "Unijeli ste pogresno slovo!\n";
                         goto povratak_prviigrac;
                     }
                     if (mlin_polje[red_num1][stup_num1] == ' ')
@@ -561,13 +628,13 @@ int main()
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
-                                printf(" %c", mlin_polje[i][j]);
-                            printf("\n");
+                                cout << mlin_polje[i][j];
+                            cout << "\n";
                         }
                     }
                     else
                     {
-                        printf("Mjesto koje ste odabrali nije slobodno!\nMolimo unesite samo mjesta koja nisu zauseta!\n");
+                        cout << "Mjesto koje ste odabrali nije slobodno!\nMolimo unesite samo mjesta koja nisu zauseta!\n";
                         goto povratak_prviigrac;
                     }
                 }
@@ -575,9 +642,9 @@ int main()
                 {
                     countX--;
                     count1--;
-                    printf("Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n");
+                    cout << "Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n";
                 povratak_mlin1:
-                    scanf(" %c,%c", &red1, &stup1);
+                    cin >> red1 >> stup1;
                     if (provjera_tocnosti1(red1, stup1))
                         goto povratak_mlin1;
                     else
@@ -585,11 +652,11 @@ int main()
                         switch_case1(&red_num1, red1, stup1, &stup_num1);
                         if (red1 < '1' || red1 > '7')
                         {
-                            printf("Unijeli ste pogresni broj!\n");
+                            cout << "Unijeli ste pogresni broj!\n";
                         }
                         if (stup1 < 'a' || stup1 > 'g')
                         {
-                            printf("Unijeli ste pogresno slovo!\n");
+                            cout << "Unijeli ste pogresno slovo!\n";
                             goto povratak_mlin1;
                         }
 
@@ -606,20 +673,20 @@ int main()
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
-                                    printf(" %c", mlin_polje[i][j]);
-                                printf("\n");
+                                    cout << mlin_polje[i][j];
+                                cout << endl;
                             }
                         }
                         else
                         {
-                            printf("Odabrali ste svoju figuru ili ste odabrali prazno mjesto!\nMolimo odaberite mjesto gdje se nalaze protivnicke figure!\n");
+                            cout << "Odabrali ste svoju figuru ili ste odabrali prazno mjesto!\nMolimo odaberite mjesto gdje se nalaze protivnicke figure!\n";
                             goto povratak_mlin1;
                         }
                     }
                 }
             povratak_drugiigrac:
-                printf("2. igrac:\n");
-                scanf(" %c,%c", &red2, &stup2);
+                cout << "2. igrac:\n";
+                cin >> red2 >> stup2;
                 if (provjera_tocnosti2(red2, stup2))
                     goto povratak_drugiigrac;
                 else
@@ -627,11 +694,11 @@ int main()
                     switch_case2(&red_num2, red2, stup2, &stup_num2);
                     if (red2 < '1' || red2 > '7')
                     {
-                        printf("Unijeli ste pogresni broj!\n");
+                        cout << "Unijeli ste pogresni broj!\n";
                     }
                     if (stup2 < 'a' || stup2 > 'g')
                     {
-                        printf("Unijeli ste pogresno slovo!\n");
+                        cout << "Unijeli ste pogresno slovo!\n";
                         goto povratak_drugiigrac;
                     }
                     if (mlin_polje[red_num2][stup_num2] == ' ')
@@ -647,13 +714,13 @@ int main()
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
-                                printf(" %c", mlin_polje[i][j]);
-                            printf("\n");
+                                cout << mlin_polje[i][j];
+                            cout << "\n";
                         }
                     }
                     else
                     {
-                        printf("Mjesto koje ste odabrali nije slobodno!\nMolimo unesite samo mjesta koja nisu zauseta!\n");
+                        cout << "Mjesto koje ste odabrali nije slobodno!\nMolimo unesite samo mjesta koja nisu zauzeta!\n";
                         goto povratak_drugiigrac;
                     }
                 }
@@ -661,9 +728,9 @@ int main()
                 {
                     countO--;
                     count1--;
-                    printf("Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n");
+                    cout << "Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n";
                 povratak_mlin2:
-                    scanf(" %c,%c", &red2, &stup2);
+                    cin >> red2 >> stup2;
                     if (provjera_tocnosti2(red2, stup2))
                         goto povratak_mlin2;
                     else
@@ -671,11 +738,11 @@ int main()
                         switch_case2(&red_num2, red2, stup2, &stup_num2);
                         if (red2 < '1' || red2 > '7')
                         {
-                            printf("Unijeli ste pogresni broj!\n");
+                            cout << "Unijeli ste pogresni broj!\n";
                         }
                         if (stup2 < 'a' || stup2 > 'g')
                         {
-                            printf("Unijeli ste pogresno slovo!\n");
+                            cout << "Unijeli ste pogresno slovo!\n";
                             goto povratak_mlin2;
                         }
                         if (mlin_polje[red_num2][stup_num2] == 'O')
@@ -691,13 +758,13 @@ int main()
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
-                                    printf(" %c", mlin_polje[i][j]);
-                                printf("\n");
+                                    cout << mlin_polje[i][j];
+                                cout << "\n";
                             }
                         }
                         else
                         {
-                            printf("Odabrali ste svoju figuru ili ste odabrali prazno mjesto!\nMolimo odaberite mjesto gdje se nalaze protivnicke figure!\n");
+                            cout << "Odabrali ste svoju figuru ili ste odabrali prazno mjesto!\nMolimo odaberite mjesto gdje se nalaze protivnicke figure!\n";
                             goto povratak_mlin2;
                         }
                     }
@@ -709,10 +776,10 @@ int main()
             {
                 if (countO == 3 || countX == 3)
                 {
-                    printf("Počinje 3. faza igre!");
+                    cout << "Počinje 3. faza igre!";
                 povratak1:
-                    printf("1. igrac odaberite figuricu kojom se zelite micati:\n");
-                    scanf(" %c,%c", &red1, &stup1);
+                    cout << "1. igrac odaberite figuricu kojom se zelite micati:\n";
+                    cin >> red1 >> stup1;
                     if (provjera_tocnosti1(red1, stup1))
                         goto povratak1;
                     else
@@ -720,11 +787,11 @@ int main()
                         switch_case1(&red_num1, red1, stup1, &stup_num1);
                         if (red1 < '1' || red1 > '7')
                         {
-                            printf("Unijeli ste pogresni broj!\n");
+                            cout << "Unijeli ste pogresni broj!\n";
                         }
                         if (stup1 < 'a' || stup1 > 'g')
                         {
-                            printf("Unijeli ste pogresno slovo!\n");
+                            cout << "Unijeli ste pogresno slovo\n";
                             goto povratak1;
                         }
                         for (int i = 2; i <= red_num1; i++)
@@ -737,8 +804,8 @@ int main()
                         }
                     }
                 povratak2:
-                    printf("1. igrac odaberite poziciju gdje se zelite pomaknuti:\n");
-                    scanf(" %c,%c", &red1, &stup1);
+                    cout << "1. igrac odaberite poziciju gdje se zelite pomaknuti:\n";
+                    cin >> red1 >> stup1;
                     if (provjera_tocnosti1(red1, stup1))
                         goto povratak2;
                     else
@@ -746,11 +813,11 @@ int main()
                         switch_case1(&red_num1, red1, stup1, &stup_num1);
                         if (red1 < '1' || red1 > '7')
                         {
-                            printf("Unijeli ste pogresni broj!\n");
+                            cout << "Unijeli ste pogresni broj!\n";
                         }
                         if (stup1 < 'a' || stup1 > 'g')
                         {
-                            printf("Unijeli ste pogresno slovo!\n");
+                            cout << "Unijeli ste pogresno slovo!\n";
                             goto povratak2;
                         }
                         if (mlin_polje[red_num1][stup_num1] == ' ')
@@ -766,24 +833,24 @@ int main()
                         }
                         else
                         {
-                            printf("Mjesto koje ste odabrali nije slobodno!\nMolimo unesite samo mjesta koja nisu zauseta!\n");
+                            cout << "Mjesto koje ste odabrali nije slobodno!\nMolimo unesite samo mjesta koja nisu zauseta!\n";
                             goto povratak2;
                         }
 
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
-                                printf(" %c", mlin_polje[i][j]);
-                            printf("\n");
+                                cout << mlin_polje[i][j];
+                            cout << endl;
                         }
                     }
                     if (provjera_mlina1(mlin_polje, red_num1, stup_num1))
                     {
                         countX--;
                         count1--;
-                        printf("Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n");
+                        cout << "Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n";
                     povratak3:
-                        scanf(" %c,%c", &red1, &stup1);
+                        cin >> red1 >> stup1;
                         if (provjera_tocnosti1(red1, stup1))
                         {
                             goto povratak3;
@@ -793,11 +860,11 @@ int main()
                             switch_case1(&red_num1, red1, stup1, &stup_num1);
                             if (red1 < '1' || red1 > '7')
                             {
-                                printf("Unijeli ste pogresni broj!\n");
+                                cout << "Unijeli ste pogresni broj!\n";
                             }
                             if (stup1 < 'a' || stup1 > 'g')
                             {
-                                printf("Unijeli ste pogresno slovo!\n");
+                                cout << "Unijeli ste pogresn slovo!\n";
                                 goto povratak3;
                             }
                             for (int i = 2; i <= red_num1; i++)
@@ -811,14 +878,14 @@ int main()
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
-                                    printf(" %c", mlin_polje[i][j]);
-                                printf("\n");
+                                    cout << mlin_polje[i][j];
+                                cout << endl;
                             }
                         }
                     }
                 povratak4:
-                    printf("2. igrac odaberite figuricu kojom se zelite micati:\n");
-                    scanf(" %c,%c", &red2, &stup2);
+                    cout << "2. igrac odaberite figuricu kojom se zelite micati:\n";
+                    cin >> red2 >> stup2;
                     if (provjera_tocnosti2(red2, stup2))
                         goto povratak4;
                     else
@@ -826,11 +893,11 @@ int main()
                         switch_case2(&red_num2, red2, stup2, &stup_num2);
                         if (red2 < '1' || red2 > '7')
                         {
-                            printf("Unijeli ste pogresni broj!\n");
+                            cout << "Unijeli ste pogresni broj!\n";
                         }
                         if (stup2 < 'a' || stup2 > 'g')
                         {
-                            printf("Unijeli ste pogresno slovo!\n");
+                            cout << "Unijeli ste pogresno slovo!\n";
                             goto povratak4;
                         }
                         for (int i = 2; i <= red_num2; i++)
@@ -843,8 +910,8 @@ int main()
                         }
                     }
                 povratak5:
-                    printf("2. igrac odaberite poziciju gdje se zelite pomaknuti:\n");
-                    scanf(" %c,%c", &red2, &stup2);
+                    cout << "2. igrac odaberite poziciju gdje se zelite pomaknuti:\n";
+                    cin >> red2 >> stup2;
                     if (provjera_tocnosti2(red2, stup2))
                         goto povratak5;
                     else
@@ -852,11 +919,11 @@ int main()
                         switch_case2(&red_num2, red2, stup2, &stup_num2);
                         if (red2 < '1' || red2 > '7')
                         {
-                            printf("Unijeli ste pogresni broj!\n");
+                            cout << "Unijeli ste pogresni broj!\n";
                         }
                         if (stup2 < 'a' || stup2 > 'g')
                         {
-                            printf("Unijeli ste pogresno slovo!\n");
+                            cout << "Unijeli ste pogresno slovo!\n";
                             goto povratak5;
                         }
                         if (mlin_polje[red_num2][stup_num2] == ' ')
@@ -872,23 +939,23 @@ int main()
                         }
                         else
                         {
-                            printf("Mjesto koje ste odabrali nije slobodno ili ste upisali pogresne koordinate!\nMolimo unesite samo mjesta koja nisu zauseta!\n");
+                            cout << "Mjesto koje ste odabrali nije slobodno ili ste upisali pogresne koordinate!\nMolimo unesite samo mjesta koja nisu zauseta!\n";
                             goto povratak5;
                         }
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
-                                printf(" %c", mlin_polje[i][j]);
-                            printf("\n");
+                                cout << mlin_polje[i][j];
+                            cout << endl;
                         }
                     }
                     if (provjera_mlina2(mlin_polje, red_num2, stup_num2))
                     {
                         countO--;
                         count1--;
-                        printf("Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n");
+                        cout << "Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n";
                     povratak6:
-                        scanf(" %c,%c", &red2, &stup2);
+                        cin >> red2 >> stup2;
                         if (provjera_tocnosti2(red2, stup2))
                             goto povratak6;
                         else
@@ -896,11 +963,11 @@ int main()
                             switch_case2(&red_num2, red2, stup2, &stup_num2);
                             if (red2 < '1' || red2 > '7')
                             {
-                                printf("Unijeli ste pogresni broj!\n");
+                                cout << "Unijeli ste pogresni broj!\n";
                             }
                             if (stup2 < 'a' || stup2 > 'g')
                             {
-                                printf("Unijeli ste pogresno slovo!\n");
+                                cout << "Unijeli ste pogresn slovo!\n";
                                 goto povratak6;
                             }
                             for (int i = 2; i <= red_num2; i++)
@@ -914,26 +981,26 @@ int main()
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
-                                    printf(" %c", mlin_polje[i][j]);
-                                printf("\n");
+                                    cout << mlin_polje[i][j];
+                                cout << endl;
                             }
                         }
                     }
                     if (countO > 2)
                     {
-                        printf("1. igrac je pobjednik!\n");
+                        cout << "1. igrac je pobjednik!\n";
                         break;
                     }
                     else
                     {
-                        printf("2. igrac je pobjednik!\n");
+                        cout << "2. igrac je pobjednik!\n";
                     }
                 }
                 else
                 {
                 povratak7:
-                    printf("1. igrac odaberite figuricu kojom se zelite micati:\n");
-                    scanf(" %c,%c", &red1, &stup1);
+                    cout << "1. igrac odaberite figuricu kojom se zelite micati:\n";
+                    cin >> red1 >> stup1;
                     if (provjera_tocnosti1(red1, stup1))
                         goto povratak7;
                     else
@@ -941,11 +1008,11 @@ int main()
                         switch_case1(&red_num1, red1, stup1, &stup_num1);
                         if (red1 < '1' || red1 > '7')
                         {
-                            printf("Unijeli ste pogresni broj!\n");
+                            cout << "Unijeli ste pogresni broj!\n";
                         }
                         if (stup1 < 'a' || stup1 > 'g')
                         {
-                            printf("Unijeli ste pogresno slovo!\n");
+                            cout << "Unijeli ste pogresno slovo!\n";
                             goto povratak7;
                         }
                         for (int i = 2; i <= red_num1; i++)
@@ -958,8 +1025,8 @@ int main()
                         }
                     }
                 povratak8:
-                    printf("1. igrac odaberite poziciju gdje se zelite pomaknuti:\n");
-                    scanf(" %c,%c", &red1, &stup1);
+                    cout << "1. igrac odaberite poziciju gdje se zelite pomaknuti:\n";
+                    cin >> red1 >> stup1;
                     if (provjera_tocnosti1(red1, stup1))
                         goto povratak8;
                     else
@@ -967,11 +1034,11 @@ int main()
                         switch_case1(&red_num1, red1, stup1, &stup_num1);
                         if (red1 < '1' || red1 > '7')
                         {
-                            printf("Unijeli ste pogresni broj!\n");
+                            cout << "Unijeli ste pogresni broj!\n";
                         }
                         if (stup1 < 'a' || stup1 > 'g')
                         {
-                            printf("Unijeli ste pogresno slovo!\n");
+                            cout << "Unijeli ste pogresno slovo!\n";
                             goto povratak8;
                         }
 
@@ -988,23 +1055,23 @@ int main()
                         }
                         else
                         {
-                            printf("Mjesto koje ste odabrali nije slobodno ili ste upisali pogresne koordinate!\nMolimo unesite samo mjesta koja nisu zauseta!\n");
+                            cout << "Mjesto koje ste odabrali nije slobodno ili ste upisali pogresne koordinate!\nMolimo unesite samo mjesta koja nisu zauseta!\n";
                             goto povratak8;
                         }
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
-                                printf(" %c", mlin_polje[i][j]);
-                            printf("\n");
+                                cout << mlin_polje[i][j];
+                            cout << endl;
                         }
                     }
                     if (provjera_mlina1(mlin_polje, red_num1, stup_num1))
                     {
                         countX--;
                         count1--;
-                        printf("Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n");
+                        cout << "Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n";
                     povratak9:
-                        scanf(" %c,%c", &red1, &stup1);
+                        cin >> red1 >> stup1;
                         if (provjera_tocnosti1(red1, stup1))
                         {
                             goto povratak9;
@@ -1014,11 +1081,11 @@ int main()
                             switch_case1(&red_num1, red1, stup1, &stup_num1);
                             if (red1 < '1' || red1 > '7')
                             {
-                                printf("Unijeli ste pogresni broj!\n");
+                                cout << "Unijeli ste pogresni broj!\n";
                             }
                             if (stup1 < 'a' || stup1 > 'g')
                             {
-                                printf("Unijeli ste pogresno slovo!\n");
+                                cout << "Unijeli ste pogresno slovo!\n";
                                 goto povratak9;
                             }
 
@@ -1033,14 +1100,14 @@ int main()
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
-                                    printf(" %c", mlin_polje[i][j]);
-                                printf("\n");
+                                    cout << mlin_polje[i][j];
+                                cout << endl;
                             }
                         }
                     }
                 povratak10:
-                    printf("2. igrac odaberite figuricu kojom se zelite micati:\n");
-                    scanf(" %c,%c", &red2, &stup2);
+                    cout << "2. igrac odaberite figuricu kojom se zelite micati:\n";
+                    cin >> red2 >> stup2;
                     if (provjera_tocnosti2(red2, stup2))
                         goto povratak10;
                     else
@@ -1048,11 +1115,11 @@ int main()
                         switch_case2(&red_num2, red2, stup2, &stup_num2);
                         if (red2 < '1' || red2 > '7')
                         {
-                            printf("Unijeli ste pogresni broj!\n");
+                            cout << "Unijeli ste pogresni broj!\n";
                         }
                         if (stup2 < 'a' || stup2 > 'g')
                         {
-                            printf("Unijeli ste pogresno slovo!\n");
+                            cout << "Unijeli ste pogresno slovo!\n";
                             goto povratak10;
                         }
                         for (int i = 2; i <= red_num2; i++)
@@ -1065,8 +1132,8 @@ int main()
                         }
                     }
                 povratak11:
-                    printf("2. igrac odaberite poziciju gdje se zelite pomaknuti:\n");
-                    scanf(" %c,%c", &red2, &stup2);
+                    cout << "2. igrac odaberite poziciju gdje se zelite pomaknuti:\n";
+                    cin >> red2 >> stup2;
                     if (provjera_tocnosti2(red2, stup2))
                         goto povratak11;
                     else
@@ -1074,11 +1141,11 @@ int main()
                         switch_case2(&red_num2, red2, stup2, &stup_num2);
                         if (red2 < '1' || red2 > '7')
                         {
-                            printf("Unijeli ste pogresni broj!\n");
+                            cout << "Unijeli ste pogresni broj!\n";
                         }
                         if (stup2 < 'a' || stup2 > 'g')
                         {
-                            printf("Unijeli ste pogresno slovo!\n");
+                            cout << "Unijeli ste pogresno slovo!\n";
                             goto povratak11;
                         }
                         if (mlin_polje[red_num2][stup_num2] == ' ')
@@ -1094,23 +1161,23 @@ int main()
                         }
                         else
                         {
-                            printf("Mjesto koje ste odabrali nije slobodno ili ste upisali pogresne koordinate!\nMolimo unesite samo mjesta koja nisu zauseta!\n");
+                            cout << "Mjesto koje ste odabrali nije slobodno ili ste upisali pogresne koordinate!\nMolimo unesite samo mjesta koja nisu zauseta!\n";
                             goto povratak11;
                         }
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
-                                printf(" %c", mlin_polje[i][j]);
-                            printf("\n");
+                                cout << mlin_polje[i][j];
+                            cout << endl;
                         }
                     }
                     if (provjera_mlina2(mlin_polje, red_num2, stup_num2))
                     {
                         countO--;
                         count1--;
-                        printf("Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n");
+                        cout << "Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n";
                     povratak12:
-                        scanf(" %c,%c", &red2, &stup2);
+                        cin >> red2 >> stup2;
                         if (provjera_tocnosti2(red2, stup2))
                             goto povratak12;
                         else
@@ -1118,11 +1185,11 @@ int main()
                             switch_case2(&red_num2, red2, stup2, &stup_num2);
                             if (red2 < '1' || red2 > '7')
                             {
-                                printf("Unijeli ste pogresni broj!\n");
+                                cout << "Unijeli ste pogresni broj!\n";
                             }
                             if (stup2 < 'a' || stup2 > 'g')
                             {
-                                printf("Unijeli ste pogresno slovo!\n");
+                                cout << "Unijeli ste pogresno slovo!\n";
                                 goto povratak12;
                             }
                             for (int i = 2; i <= red_num2; i++)
@@ -1136,8 +1203,8 @@ int main()
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
-                                    printf(" %c", mlin_polje[i][j]);
-                                printf("\n");
+                                    cout << mlin_polje[i][j];
+                                cout << endl;
                             }
                         }
                     }
@@ -1146,33 +1213,41 @@ int main()
         }
         else if (izbor == 2)
         {
-            printf("1.\n");
-            printf("Na samom početku igre, igrača ploča je prazna.\n");
-            printf("Prvo crni, a zatim naizmjenično, igrači postavljaju po jednu figuricu na slobodnu, presječnu točku.\n");
-            printf("U ovoj fazi igre, postavljaju se uvijek nove figure, a one na ploči se još uvijek ne smiju pomicati.\n");
-            printf("Ako igrač u ovoj fazi formira \"mlin\", odmah uklanja jednu protivničku figuru s ploče.\n");
-            printf("Kad se nakon 9 poteza (9 figura) , sve figure uvedu u igru, prelazi se na sljedeću fazu.\n");
-            printf("\n");
-            printf("2.\n");
-            printf("Igrači naizmjenično pomiču po jednu svoju figuru, duž linija, do susjedne točke.\n");
-            printf("U ovoj fazi, može se pomaknuti jedna figura iz formiranog \"mlina\", a u sljedećem potezu vratiti, formirati ponovo i iznova ukloniti protivničku figuru.\n");
-            printf("Za rasformiranje formiranog \"mlina\", koristi se termin \"otvaranje\", a za ponovno njeno formiranje, termin \"zatvaranje\".");
-            printf("Čim igrač ostane na tri figure, samo on ulazi u treću fazu igre.\n");
-            printf("\n");
-            printf("3.\n");
-            printf("Igrač koji ostane s tri figure, ima pravo bilo koju od njih prebaciti na bilo koje slobodno polje.\n");
-            printf("Ako u međuvremenu i protivnik ostane sa tri figure, i on tog trenutka ulazi u 3. fazu igre.\n");
-            printf("Znači, i njegove figure sada mogu skakati od polja do polja, bez obzira na linije spajanja.\n");
-            printf("Partija \"mlina\" se u drugoj fazi igre može i završiti \"blokiranjem\". Ako bilo tko, na svom potezu, nema što odigrati - gubi partiju.");
+            cout << "1.\n";
+            cout << "Na samom početku igre, igrača ploča je prazna.\n";
+            cout << "Prvo crni, a zatim naizmjenično, igrači postavljaju po jednu figuricu na slobodnu, presječnu točku.\n";
+            cout << "U ovoj fazi igre, postavljaju se uvijek nove figure, a one na ploči se još uvijek ne smiju pomicati.\n";
+            cout << "Ako igrač u ovoj fazi formira \"mlin\", odmah uklanja jednu protivničku figuru s ploče.\n";
+            cout << "Kad se nakon 9 poteza (9 figura) , sve figure uvedu u igru, prelazi se na sljedeću fazu.\n";
+            cout << "\n";
+            cout << "2.\n";
+            cout << "Igrači naizmjenično pomiču po jednu svoju figuru, duž linija, do susjedne točke.\n";
+            cout << "U ovoj fazi, može se pomaknuti jedna figura iz formiranog \"mlina\", a u sljedećem potezu vratiti, formirati ponovo i iznova ukloniti protivničku figuru.\n";
+            cout << "Za rasformiranje formiranog \"mlina\", koristi se termin \"otvaranje\", a za ponovno njeno formiranje, termin \"zatvaranje\".\n";
+            cout << "Čim igrač ostane na tri figure, samo on ulazi u treću fazu igre.\n";
+            cout << "\n";
+            cout << "3.\n";
+            cout << "Igrač koji ostane s tri figure, ima pravo bilo koju od njih prebaciti na bilo koje slobodno polje.\n";
+            cout << "Ako u međuvremenu i protivnik ostane sa tri figure, i on tog trenutka ulazi u 3. fazu igre.\n";
+            cout << "Znači, i njegove figure sada mogu skakati od polja do polja, bez obzira na linije spajanja.\n";
+            cout << "Partija \"mlina\" se u drugoj fazi igre može i završiti \"blokiranjem\". Ako bilo tko, na svom potezu, nema što odigrati - gubi partiju.\n";
         }
         else if (izbor == 3)
         {
-            printf("Gasenje programa...\n");
+            cout << "Gasenje programa...\n";
             break;
         }
+        else if (izbor == 4)
+        {
+            login();
+        }
+        else if (izbor == 5)
+        {
+            signUp();
+        }
         else
-            printf("Pogresan unos!");
-        printf("\n\nStisnite Enter za nastavak...");
+            cout << "Pogresan unos!";
+        cout << "\n\nStisnite Enter za nastavak...";
         getchar();
         getchar();
     }
