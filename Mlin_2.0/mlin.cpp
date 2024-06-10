@@ -499,55 +499,92 @@ void signUp()
     cout << "Unesite lozinku: ";
     cin >> newUser.password;
 
-    ofstream outFile("Korisnici.dat", ios::binary | ios::app);
+    ofstream outFile("Korisnici.bin", ios::binary | ios::app);
     if (!outFile)
     {
-        cerr << "File could not be opened!" << endl;
+        cerr << "Ne moze se pristupiti datoteci!" << endl;
         return;
     }
 
     outFile.write(reinterpret_cast<char *>(&newUser), sizeof(User));
     outFile.close();
 
-    cout << "User registered successfully!" << endl;
+    cout << "Korisnici racun je uspijesno registriran!" << endl;
 }
 
-bool login()
+bool login1(char *imeKorisnik1)
 {
-    User existingUser;
-    char username[50];
-    char password[50];
+    User existingUser1;
+    char username1[50];
+    char password1[50];
 
-    cout << "Unesite korisnicko ime: ";
-    cin >> username;
-    cout << "Unesite lozinku: ";
-    cin >> password;
+    cout << "1. igrac unesite korisnicko ime: ";
+    cin >> username1;
+    strcpy(imeKorisnik1, username1);
+    cout << "1. igrac unesite lozinku: ";
+    cin >> password1;
 
-    ifstream inFile("Korisnici.dat", ios::binary);
+    ifstream inFile("Korisnici.bin", ios::binary);
     if (!inFile)
     {
-        cerr << "File could not be opened!" << endl;
+        cerr << "Ne moze se pristupiti datoteci!" << endl;
         return false;
     }
 
-    while (inFile.read(reinterpret_cast<char *>(&existingUser), sizeof(User)))
+    while (inFile.read(reinterpret_cast<char *>(&existingUser1), sizeof(User)))
     {
-        if (strcmp(existingUser.username, username) == 0 && strcmp(existingUser.password, password) == 0)
+        if (strcmp(existingUser1.username, username1) == 0 && strcmp(existingUser1.password, password1) == 0)
         {
-            cout << "Login successful!" << endl;
+            cout << "Uspijesno ste se prijavili!" << endl;
             inFile.close();
             return true;
         }
     }
 
     inFile.close();
-    cout << "Invalid username or password!" << endl;
+    cout << "Nije tocno korisnicko ime ili lozinka!" << endl;
+    return false;
+}
+
+bool login2(char *imeKorisnik2)
+{
+    User existingUser2;
+    char username2[50];
+    char password2[50];
+
+    cout << "2. igrac unesite korisnicko ime: ";
+    cin >> username2;
+    strcpy(imeKorisnik2, username2);
+    cout << "2. igrac unesite lozinku: ";
+    cin >> password2;
+
+    ifstream inFile("Korisnici.bin", ios::binary);
+    if (!inFile)
+    {
+        cerr << "Ne moze se pristupiti datoteci!" << endl;
+        return false;
+    }
+
+    while (inFile.read(reinterpret_cast<char *>(&existingUser2), sizeof(User)))
+    {
+        if (strcmp(existingUser2.username, username2) == 0 && strcmp(existingUser2.password, password2) == 0)
+        {
+            cout << "Uspijesno ste se prijavili!" << endl;
+            inFile.close();
+            return true;
+        }
+    }
+
+    inFile.close();
+    cout << "Nije tocno korisnicko ime ili lozinka!" << endl;
     return false;
 }
 
 int main()
 {
     int izbor;
+    char imeKorisnik1[50] = "Igrac1";
+    char imeKorisnik2[50] = "Igrac2";
     while (1)
     {
         cout << "  _____ _                              _                              _     \n";
@@ -587,7 +624,7 @@ int main()
             for (int i = 0; i < 16; i++)
             {
                 for (int j = 0; j < 16; j++)
-                    cout << " " <<mlin_polje[i][j];
+                    cout << " " << mlin_polje[i][j];
                 cout << "\n";
             }
             cout << "\n";
@@ -597,8 +634,10 @@ int main()
             while (count <= 9)
             {
             povratak_prviigrac:
-                cout << "1. igrac:\n";
-                cin >> red1 >> stup1;
+                cout << imeKorisnik1 << endl;
+                cin >> red1;
+                cin.ignore();
+                cin >> stup1;
                 if (provjera_tocnosti1(red1, stup1))
                 {
                     goto povratak_prviigrac;
@@ -628,7 +667,7 @@ int main()
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
-                                cout << mlin_polje[i][j];
+                                cout << " " << mlin_polje[i][j];
                             cout << "\n";
                         }
                     }
@@ -644,7 +683,9 @@ int main()
                     count1--;
                     cout << "Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n";
                 povratak_mlin1:
-                    cin >> red1 >> stup1;
+                    cin >> red1;
+                    cin.ignore();
+                    cin >> stup1;
                     if (provjera_tocnosti1(red1, stup1))
                         goto povratak_mlin1;
                     else
@@ -673,7 +714,7 @@ int main()
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
-                                    cout << mlin_polje[i][j];
+                                    cout << " " << mlin_polje[i][j];
                                 cout << endl;
                             }
                         }
@@ -685,8 +726,10 @@ int main()
                     }
                 }
             povratak_drugiigrac:
-                cout << "2. igrac:\n";
-                cin >> red2 >> stup2;
+                cout << imeKorisnik2 << endl;
+                cin >> red2;
+                cin.ignore();
+                cin >> stup2;
                 if (provjera_tocnosti2(red2, stup2))
                     goto povratak_drugiigrac;
                 else
@@ -714,7 +757,7 @@ int main()
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
-                                cout << mlin_polje[i][j];
+                                cout << " " << mlin_polje[i][j];
                             cout << "\n";
                         }
                     }
@@ -730,7 +773,9 @@ int main()
                     count1--;
                     cout << "Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n";
                 povratak_mlin2:
-                    cin >> red2 >> stup2;
+                    cin >> red2;
+                    cin.ignore();
+                    cin >> stup2;
                     if (provjera_tocnosti2(red2, stup2))
                         goto povratak_mlin2;
                     else
@@ -758,7 +803,7 @@ int main()
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
-                                    cout << mlin_polje[i][j];
+                                    cout << " " << mlin_polje[i][j];
                                 cout << "\n";
                             }
                         }
@@ -778,8 +823,10 @@ int main()
                 {
                     cout << "Počinje 3. faza igre!";
                 povratak1:
-                    cout << "1. igrac odaberite figuricu kojom se zelite micati:\n";
-                    cin >> red1 >> stup1;
+                    cout << imeKorisnik1 << " odaberite figuricu kojom se zelite micati:\n";
+                    cin >> red1;
+                    cin.ignore();
+                    cin >> stup1;
                     if (provjera_tocnosti1(red1, stup1))
                         goto povratak1;
                     else
@@ -804,8 +851,10 @@ int main()
                         }
                     }
                 povratak2:
-                    cout << "1. igrac odaberite poziciju gdje se zelite pomaknuti:\n";
-                    cin >> red1 >> stup1;
+                    cout << imeKorisnik1 << " odaberite poziciju gdje se zelite pomaknuti:\n";
+                    cin >> red1;
+                    cin.ignore();
+                    cin >> stup1;
                     if (provjera_tocnosti1(red1, stup1))
                         goto povratak2;
                     else
@@ -850,7 +899,9 @@ int main()
                         count1--;
                         cout << "Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n";
                     povratak3:
-                        cin >> red1 >> stup1;
+                        cin >> red1;
+                        cin.ignore();
+                        cin >> stup1;
                         if (provjera_tocnosti1(red1, stup1))
                         {
                             goto povratak3;
@@ -878,14 +929,16 @@ int main()
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
-                                    cout << mlin_polje[i][j];
+                                    cout << " " << mlin_polje[i][j];
                                 cout << endl;
                             }
                         }
                     }
                 povratak4:
-                    cout << "2. igrac odaberite figuricu kojom se zelite micati:\n";
-                    cin >> red2 >> stup2;
+                    cout << imeKorisnik2 << " odaberite figuricu kojom se zelite micati:\n";
+                    cin >> red2;
+                    cin.ignore();
+                    cin >> stup2;
                     if (provjera_tocnosti2(red2, stup2))
                         goto povratak4;
                     else
@@ -910,8 +963,10 @@ int main()
                         }
                     }
                 povratak5:
-                    cout << "2. igrac odaberite poziciju gdje se zelite pomaknuti:\n";
-                    cin >> red2 >> stup2;
+                    cout << imeKorisnik2 << " odaberite poziciju gdje se zelite pomaknuti:\n";
+                    cin >> red2;
+                    cin.ignore();
+                    cin >> stup2;
                     if (provjera_tocnosti2(red2, stup2))
                         goto povratak5;
                     else
@@ -945,7 +1000,7 @@ int main()
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
-                                cout << mlin_polje[i][j];
+                                cout << " " << mlin_polje[i][j];
                             cout << endl;
                         }
                     }
@@ -955,7 +1010,9 @@ int main()
                         count1--;
                         cout << "Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n";
                     povratak6:
-                        cin >> red2 >> stup2;
+                        cin >> red2;
+                        cin.ignore();
+                        cin >> stup2;
                         if (provjera_tocnosti2(red2, stup2))
                             goto povratak6;
                         else
@@ -981,26 +1038,28 @@ int main()
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
-                                    cout << mlin_polje[i][j];
+                                    cout << " " << mlin_polje[i][j];
                                 cout << endl;
                             }
                         }
                     }
                     if (countO > 2)
                     {
-                        cout << "1. igrac je pobjednik!\n";
+                        cout << imeKorisnik1 << " je pobjednik!\n";
                         break;
                     }
                     else
                     {
-                        cout << "2. igrac je pobjednik!\n";
+                        cout << imeKorisnik2 << " je pobjednik!\n";
                     }
                 }
                 else
                 {
                 povratak7:
-                    cout << "1. igrac odaberite figuricu kojom se zelite micati:\n";
-                    cin >> red1 >> stup1;
+                    cout << imeKorisnik1 << " odaberite figuricu kojom se zelite micati:\n";
+                    cin >> red1;
+                    cin.ignore();
+                    cin >> stup1;
                     if (provjera_tocnosti1(red1, stup1))
                         goto povratak7;
                     else
@@ -1025,8 +1084,10 @@ int main()
                         }
                     }
                 povratak8:
-                    cout << "1. igrac odaberite poziciju gdje se zelite pomaknuti:\n";
-                    cin >> red1 >> stup1;
+                    cout << imeKorisnik1 << " odaberite poziciju gdje se zelite pomaknuti:\n";
+                    cin >> red1;
+                    cin.ignore();
+                    cin >> stup1;
                     if (provjera_tocnosti1(red1, stup1))
                         goto povratak8;
                     else
@@ -1071,7 +1132,9 @@ int main()
                         count1--;
                         cout << "Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n";
                     povratak9:
-                        cin >> red1 >> stup1;
+                        cin >> red1;
+                        cin.ignore();
+                        cin >> stup1;
                         if (provjera_tocnosti1(red1, stup1))
                         {
                             goto povratak9;
@@ -1100,14 +1163,16 @@ int main()
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
-                                    cout << mlin_polje[i][j];
+                                    cout << " " << mlin_polje[i][j];
                                 cout << endl;
                             }
                         }
                     }
                 povratak10:
-                    cout << "2. igrac odaberite figuricu kojom se zelite micati:\n";
-                    cin >> red2 >> stup2;
+                    cout << imeKorisnik2 << " odaberite figuricu kojom se zelite micati:\n";
+                    cin >> red2;
+                    cin.ignore();
+                    cin >> stup2;
                     if (provjera_tocnosti2(red2, stup2))
                         goto povratak10;
                     else
@@ -1132,8 +1197,10 @@ int main()
                         }
                     }
                 povratak11:
-                    cout << "2. igrac odaberite poziciju gdje se zelite pomaknuti:\n";
-                    cin >> red2 >> stup2;
+                    cout << imeKorisnik2 << " odaberite poziciju gdje se zelite pomaknuti:\n";
+                    cin >> red2;
+                    cin.ignore();
+                    cin >> stup2;
                     if (provjera_tocnosti2(red2, stup2))
                         goto povratak11;
                     else
@@ -1167,7 +1234,7 @@ int main()
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
-                                cout << mlin_polje[i][j];
+                                cout << " " << mlin_polje[i][j];
                             cout << endl;
                         }
                     }
@@ -1177,7 +1244,9 @@ int main()
                         count1--;
                         cout << "Stvorili ste mlin!\nOdaberite jednu protivnikovu figuru koju zelite otkloniti!\n";
                     povratak12:
-                        cin >> red2 >> stup2;
+                        cin >> red2;
+                        cin.ignore();
+                        cin >> stup2;
                         if (provjera_tocnosti2(red2, stup2))
                             goto povratak12;
                         else
@@ -1203,7 +1272,7 @@ int main()
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
-                                    cout << mlin_polje[i][j];
+                                    cout << " " << mlin_polje[i][j];
                                 cout << endl;
                             }
                         }
@@ -1239,7 +1308,8 @@ int main()
         }
         else if (izbor == 4)
         {
-            login();
+            login1(imeKorisnik1);
+            login2(imeKorisnik2);
         }
         else if (izbor == 5)
         {
