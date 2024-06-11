@@ -1,5 +1,9 @@
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <vector>
+#include <unordered_map>
+#include <algorithm>
 #include <cstring>
 
 using namespace std;
@@ -589,7 +593,22 @@ void clear_screen()
 
 int main()
 {
-    char pass;
+
+    const string filename = "leaderboard.txt";
+    fstream datoteka;
+    unordered_map<string, int> scores; // za spremanje rezultata iz datoteke
+    datoteka.open(filename, ios::in);  // otvaranje datoteke za čitanje postoječih rezultata
+    if (datoteka.is_open())
+    {
+        string name;
+        int score;
+        while (datoteka >> name >> score)
+        {
+            scores[name] = score;
+        }
+        datoteka.close();
+    }
+
     int izbor;
     char imeKorisnik1[50] = "Igrac1";
     char imeKorisnik2[50] = "Igrac2";
@@ -609,6 +628,7 @@ int main()
         cout << "3. Exit\n";
         cout << "4. Log in\n";
         cout << "5. Sign up\n";
+        cout << "6. Leaderboard\n";
         cin >> izbor;
         if (izbor == 1)
         {
@@ -1065,11 +1085,15 @@ int main()
                     if (countO > 2)
                     {
                         cout << imeKorisnik1 << " je pobjednik!\n";
+                        scores[imeKorisnik1]++; // updatanje pobjednikovih poena
+                        scores[imeKorisnik2] = 0;
                         break;
                     }
                     else
                     {
                         cout << imeKorisnik2 << " je pobjednik!\n";
+                        scores[imeKorisnik2]++; // updatanje pobjednikovih poena
+                        scores[imeKorisnik1] = 0;
                     }
                 }
                 else
@@ -1342,6 +1366,29 @@ int main()
             clear_screen();
             signUp();
         }
+        else if (izbor == 6)
+        {
+            clear_screen();
+            vector<pair<string, int>> sortedScores(scores.begin(), scores.end()); // sortiranje igrača prema bodovima
+            sort(sortedScores.begin(), sortedScores.end(), [](const pair<string, int> &p1, const pair<string, int> &p2)
+                 { return p1.second > p2.second; });
+
+            // upisivnje novog poretka u datoteku
+            datoteka.open(filename, ios::out | ios::trunc);
+            if (datoteka.is_open())
+            {
+                for (const auto &player : sortedScores)
+                {
+                    datoteka << player.first << " " << player.second << "\n";
+                }
+                datoteka.close();
+                // prikaz novog poretka
+                for (const auto &player : sortedScores)
+                {
+                    cout << player.first << " " << player.second << endl;
+                }
+            }
+        }
         else
             cout << "Pogresan unos!";
         cout << "\n\nStisnite Enter za nastavak...";
@@ -1349,6 +1396,7 @@ int main()
         getchar();
         clear_screen();
     }
+
     return 0;
 }
 // https://www.w3.org/TR/xml-entity-names/026.html
