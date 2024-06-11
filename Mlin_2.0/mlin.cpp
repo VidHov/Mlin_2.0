@@ -1,6 +1,10 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include <iomanip>
+#include <openssl/evp.h>
+#include <openssl/err.h>
+#include <openssl/ssl.h>
 
 using namespace std;
 
@@ -498,7 +502,7 @@ void signUp()
     cin >> newUser.username;
     cout << "Unesite lozinku: ";
     cin >> newUser.password;
-
+    enkripcija(newUser.password);
     ofstream outFile("Korisnici.bin", ios::binary | ios::app);
     if (!outFile)
     {
@@ -517,10 +521,9 @@ bool login1(char *imeKorisnik1)
     User existingUser1;
     char username1[50];
     char password1[50];
-
+login_1:
     cout << "1. igrac unesite korisnicko ime: ";
     cin >> username1;
-    strcpy(imeKorisnik1, username1);
     cout << "1. igrac unesite lozinku: ";
     cin >> password1;
 
@@ -536,6 +539,7 @@ bool login1(char *imeKorisnik1)
         if (strcmp(existingUser1.username, username1) == 0 && strcmp(existingUser1.password, password1) == 0)
         {
             cout << "Uspijesno ste se prijavili!" << endl;
+            strcpy(imeKorisnik1, username1);
             inFile.close();
             return true;
         }
@@ -543,6 +547,7 @@ bool login1(char *imeKorisnik1)
 
     inFile.close();
     cout << "Nije tocno korisnicko ime ili lozinka!" << endl;
+    goto login_1;
     return false;
 }
 
@@ -551,13 +556,11 @@ bool login2(char *imeKorisnik2)
     User existingUser2;
     char username2[50];
     char password2[50];
-
+login_2:
     cout << "2. igrac unesite korisnicko ime: ";
     cin >> username2;
-    strcpy(imeKorisnik2, username2);
     cout << "2. igrac unesite lozinku: ";
     cin >> password2;
-
     ifstream inFile("Korisnici.bin", ios::binary);
     if (!inFile)
     {
@@ -570,6 +573,7 @@ bool login2(char *imeKorisnik2)
         if (strcmp(existingUser2.username, username2) == 0 && strcmp(existingUser2.password, password2) == 0)
         {
             cout << "Uspijesno ste se prijavili!" << endl;
+            strcpy(imeKorisnik2, username2);
             inFile.close();
             return true;
         }
@@ -577,11 +581,20 @@ bool login2(char *imeKorisnik2)
 
     inFile.close();
     cout << "Nije tocno korisnicko ime ili lozinka!" << endl;
+    goto login_2;
     return false;
+}
+
+void clear_screen()
+{
+    printf(
+        "\033[2J"
+        "\033[1;1H");
 }
 
 int main()
 {
+    char pass;
     int izbor;
     char imeKorisnik1[50] = "Igrac1";
     char imeKorisnik2[50] = "Igrac2";
@@ -623,6 +636,7 @@ int main()
                 "#7 ----- ----- #",
                 "################",
             };
+            clear_screen();
             for (int i = 0; i < 16; i++)
             {
                 for (int j = 0; j < 16; j++)
@@ -666,6 +680,7 @@ int main()
                                     mlin_polje[i][j] = 'O';
                             }
                         }
+                        clear_screen();
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
@@ -713,6 +728,7 @@ int main()
                                         mlin_polje[i][j] = ' ';
                                 }
                             }
+                            clear_screen();
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
@@ -756,6 +772,7 @@ int main()
                                     mlin_polje[i][j] = 'X';
                             }
                         }
+                        clear_screen();
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
@@ -802,6 +819,7 @@ int main()
                                         mlin_polje[i][j] = ' ';
                                 }
                             }
+                            clear_screen();
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
@@ -887,7 +905,7 @@ int main()
                             cout << "Mjesto koje ste odabrali nije slobodno!\nMolimo unesite samo mjesta koja nisu zauseta!\n";
                             goto povratak2;
                         }
-
+                        clear_screen();
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
@@ -928,6 +946,7 @@ int main()
                                         mlin_polje[i][j] = ' ';
                                 }
                             }
+                            clear_screen();
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
@@ -999,6 +1018,7 @@ int main()
                             cout << "Mjesto koje ste odabrali nije slobodno ili ste upisali pogresne koordinate!\nMolimo unesite samo mjesta koja nisu zauseta!\n";
                             goto povratak5;
                         }
+                        clear_screen();
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
@@ -1037,6 +1057,7 @@ int main()
                                         mlin_polje[i][j] = ' ';
                                 }
                             }
+                            clear_screen();
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
@@ -1121,10 +1142,11 @@ int main()
                             cout << "Mjesto koje ste odabrali nije slobodno ili ste upisali pogresne koordinate!\nMolimo unesite samo mjesta koja nisu zauseta!\n";
                             goto povratak8;
                         }
+                        clear_screen();
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
-                                cout << mlin_polje[i][j];
+                                cout << " " << mlin_polje[i][j];
                             cout << endl;
                         }
                     }
@@ -1162,6 +1184,7 @@ int main()
                                         mlin_polje[i][j] = ' ';
                                 }
                             }
+                            clear_screen();
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
@@ -1233,6 +1256,7 @@ int main()
                             cout << "Mjesto koje ste odabrali nije slobodno ili ste upisali pogresne koordinate!\nMolimo unesite samo mjesta koja nisu zauseta!\n";
                             goto povratak11;
                         }
+                        clear_screen();
                         for (int i = 0; i < 16; i++)
                         {
                             for (int j = 0; j < 16; j++)
@@ -1271,6 +1295,7 @@ int main()
                                         mlin_polje[i][j] = ' ';
                                 }
                             }
+                            clear_screen();
                             for (int i = 0; i < 16; i++)
                             {
                                 for (int j = 0; j < 16; j++)
@@ -1284,6 +1309,7 @@ int main()
         }
         else if (izbor == 2)
         {
+            clear_screen();
             cout << "1.\n";
             cout << "Na samom početku igre, igrača ploča je prazna.\n";
             cout << "Prvo crni, a zatim naizmjenično, igrači postavljaju po jednu figuricu na slobodnu, presječnu točku.\n";
@@ -1305,16 +1331,19 @@ int main()
         }
         else if (izbor == 3)
         {
+            clear_screen();
             cout << "Gasenje programa...\n";
             break;
         }
         else if (izbor == 4)
         {
+            clear_screen();
             login1(imeKorisnik1);
             login2(imeKorisnik2);
         }
         else if (izbor == 5)
         {
+            clear_screen();
             signUp();
         }
         else
@@ -1322,6 +1351,7 @@ int main()
         cout << "\n\nStisnite Enter za nastavak...";
         getchar();
         getchar();
+        clear_screen();
     }
     return 0;
 }
