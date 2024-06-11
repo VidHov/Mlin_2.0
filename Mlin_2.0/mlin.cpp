@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 #include <cstring>
 #include <iomanip>
 #include <openssl/evp.h>
@@ -340,7 +341,7 @@ int provjera_pomaka(int red1, int stup1)
   int flagR = 0, flagS = 0;
   int moguci_redak[5] = {0, 0, 0, 0, 0};
   char moguci_stupac[6] = {'x', 'x', 'x', 'x', 'x'};
-  if(red1 == 1 && stup1 == 'a'){
+  if(red1 == '1' && stup1 == 'a'){
     moguci_redak[0] = 1;
     moguci_redak[1] = 4;
     moguci_stupac[0] = 'a';
@@ -488,6 +489,18 @@ void switch_case2(int *red_num2, char red2, char stup2, int *stup_num2)
     }
 }
 
+void initialize_openssl()
+{
+    SSL_load_error_strings();
+    OpenSSL_add_ssl_algorithms();
+}
+
+void cleanup_openssl()
+{
+    EVP_cleanup();
+    ERR_free_strings();
+}
+
 struct User
 {
     char username[50];
@@ -502,17 +515,26 @@ void signUp()
     cin >> newUser.username;
     cout << "Unesite lozinku: ";
     cin >> newUser.password;
-    enkripcija(newUser.password);
+    char *data = newUser.password;
+    strcat(*data, ".Mlin20");
+    initialize_openssl();
+    const EVP_MD *md = EVP_sha256();
+    EVP_MD_CTX *mdctx = EVP_MD_CTX_new();
+    EVP_DigestInit_ex(mdctx, md, nullptr);
+    EVP_DigestUpdate(mdctx, data, strlen(data));
+    unsigned char hash[EVP_MAX_MD_SIZE];
+    unsigned int lengthOfHash = 0;
+    EVP_DigestFinal_ex(mdctx, hash, &lengthOfHash);
+    EVP_MD_CTX_free(mdctx);
+    cleanup_openssl();
     ofstream outFile("Korisnici.bin", ios::binary | ios::app);
     if (!outFile)
     {
         cerr << "Ne moze se pristupiti datoteci!" << endl;
         return;
     }
-
-    outFile.write(reinterpret_cast<char *>(&newUser), sizeof(User));
+    outFile.write(reinterpret_cast<char *>(&data), sizeof(User));
     outFile.close();
-
     cout << "Korisnici racun je uspijesno registriran!" << endl;
 }
 
@@ -521,7 +543,7 @@ bool login1(char *imeKorisnik1)
     User existingUser1;
     char username1[50];
     char password1[50];
-login_1:
+    login_1:
     cout << "1. igrac unesite korisnicko ime: ";
     cin >> username1;
     cout << "1. igrac unesite lozinku: ";
@@ -556,7 +578,7 @@ bool login2(char *imeKorisnik2)
     User existingUser2;
     char username2[50];
     char password2[50];
-login_2:
+    login_2:
     cout << "2. igrac unesite korisnicko ime: ";
     cin >> username2;
     cout << "2. igrac unesite lozinku: ";
@@ -600,6 +622,7 @@ int main()
     char imeKorisnik2[50] = "Igrac2";
     while (1)
     {
+        clear_screen();
         cout << "███╗   ███╗██╗     ██╗███╗   ██╗    ██████╗     ██████╗ \n";
         cout << "████╗ ████║██║     ██║████╗  ██║    ╚════██╗   ██╔═████╗\n";
         cout << "██╔████╔██║██║     ██║██╔██╗ ██║     █████╔╝   ██║██╔██║\n";
